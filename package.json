@@ -1,0 +1,29 @@
+{
+  "name": "arduinoNodeJS",
+  "version": "0.0.1",
+  "description": "Arduino, NodeJS, Express, Serialport and socketio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fitosegrera/arduinoNodeJS.git"
+  },
+  "keywords": [
+    "arduino",
+    "nodejs",
+    "socket.io",
+    "serialport",
+    "express"
+  ],
+  "author": "fito_segrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fitosegrera/arduinoNodeJS/issues"
+  },
+  "homepage": "https://github.com/fitosegrera/arduinoNodeJS",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
