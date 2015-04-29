@@ -3,6 +3,12 @@ var app = express()
 var io = require('socket.io');
 var serv_io = io.listen(3300);
 var fs = require('fs')
+var SerialPort = require("serialport").SerialPort
+
+//Setup the serial port to talk and listen to arduino's
+// var arduino = new SerialPort("/dev/ttyACM0", {
+//   baudrate: 9600
+// })
 
 //Set the ap to serve static files in the folder /public
 app.use('/', express.static(__dirname + '/public'))
@@ -15,8 +21,18 @@ app.get('/commands', function(req, res) {
         socket.emit('connected', {
             status: 'OK'
         })
+
+        var buffer = new Buffer(2); //buffer array for led states
+        buffer[0] = 0x00 //0 --> off   
+        buffer[1] = 0x01 //1 --> on
+
         socket.on('coms', function(data) {
-            console.log(data);
+            if (data.ledState == "off") {
+                //arduino.write(buffer[0])
+            } else if (data.ledState == "on") {
+                // arduino.write(buffer[1])
+            }
+            console.log("arduino led --> " + data.ledState)
         })
     })
 })
