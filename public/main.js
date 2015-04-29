@@ -1,8 +1,13 @@
 var socket = io.connect('http://localhost:3300')
-var ard = document.getElementById("images")
 
 socket.on('connected', function(data) {
     console.log(data.status)
+})
+
+socket.on('sensor', function(data) {
+    var ard = document.getElementById("sensor")
+    ard.innerHTML = "sensor data: " + (data.val).toString()
+    console.log(data.val)
 })
 
 var state = false

@@ -13,4 +13,10 @@ input {
     background: #111;
     color: #fff;
     font-size: 13px;
+    margin-top: 20%;
+}
+
+div{
+    padding-top: 20px;
+    font-size: 10px;
 }
