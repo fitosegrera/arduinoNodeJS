@@ -15,12 +15,18 @@ Arduino, NodeJS, Express, Serialport and socketio
 
 		sudo npm install
 
-4. Make sure you have an arduino connected to your computer. Take note of the serialport your arduino is using and replace in server.js
+4. Make sure you have an arduino connected to your computer. Replace "/dev/ttyACM0" in the file server.js line 9 with whatever port your arduino is using:
 
-5. The arduino should have an led connected to pin 13
+		var arduino = new SerialPort("/dev/ttyACM0", {
+    		baudrate: 9600
+		})
 
-6. run the server:
+5. The arduino should have an led connected to pin 13 and a sensor to analog 0
+
+6. Upload the code main.ino located in the arduino folder of this repository
+
+7. run the server:
 
 		node server.js
 
-7. go to your web browser and type the url 'localhost:3000/commands'
+8. go to your web browser and type the url 'localhost:3000/commands'
